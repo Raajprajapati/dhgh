@@ -59,7 +59,7 @@ const News = (props)=>{
             <>
                 <h1 className="text-center" style={{ margin: '35px 0px' }}>NewsApp - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
                 {loading && <Spinner />}
-                <InfiniteScroll
+                {articles?<InfiniteScroll
                     dataLength={articles.length}
                     next={fetchMoreData}
                     hasMore={articles.length !== totalResults}
@@ -75,7 +75,7 @@ const News = (props)=>{
                         })}
                     </div>
                     </div> 
-                </InfiniteScroll>
+                </InfiniteScroll>:null}
 
             </>
         )
